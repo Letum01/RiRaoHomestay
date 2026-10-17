@@ -1,0 +1,137 @@
+/* ==========================================================
+   ANIMATIONS.CSS – Rì Rào Homestay
+   Healing, smooth, nature-inspired motion
+   ========================================================== */
+
+/* ── Keyframes ────────────────────────────────────────────── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(32px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+@keyframes waveFloat {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%       { transform: translateY(-8px) rotate(1deg); }
+}
+@keyframes wavePulse {
+  0%, 100% { transform: scaleX(1); opacity: .7; }
+  50%       { transform: scaleX(1.04); opacity: 1; }
+}
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-40px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scaleIn {
+  from { opacity: 0; transform: scale(.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+@keyframes scrollDot {
+  0%   { opacity: 1; transform: translateY(0); }
+  80%  { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 0; transform: translateY(10px); }
+}
+@keyframes heroSlide {
+  0%   { opacity: 0; transform: scale(1.06); }
+  8%   { opacity: 1; transform: scale(1); }
+  33%  { opacity: 1; transform: scale(1.03); }
+  41%  { opacity: 0; transform: scale(1.06); }
+  100% { opacity: 0; }
+}
+@keyframes loadingWave {
+  0%   { letter-spacing: 2px; }
+  50%  { letter-spacing: 6px; }
+  100% { letter-spacing: 2px; }
+}
+@keyframes spinnerRing {
+  to { transform: rotate(360deg); }
+}
+@keyframes boardingReveal {
+  from { opacity: 0; transform: translateY(24px) scale(.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes toastSlide {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+/* ── Scroll Reveal ────────────────────────────────────────── */
+.reveal-up,
+.reveal-left,
+.reveal-right {
+  opacity: 0;
+  transition: opacity .7s cubic-bezier(.22,.61,.36,1),
+              transform .7s cubic-bezier(.22,.61,.36,1);
+}
+.reveal-up    { transform: translateY(28px); }
+.reveal-left  { transform: translateX(-28px); }
+.reveal-right { transform: translateX(28px); }
+
+.reveal-up.visible,
+.reveal-left.visible,
+.reveal-right.visible {
+  opacity: 1;
+  transform: translate(0);
+}
+
+/* staggered children */
+.rooms__grid    .room-card:nth-child(1)  { transition-delay: .0s; }
+.rooms__grid    .room-card:nth-child(2)  { transition-delay: .12s; }
+.rooms__grid    .room-card:nth-child(3)  { transition-delay: .24s; }
+.exp__grid      .exp-card:nth-child(1)   { transition-delay: .0s; }
+.exp__grid      .exp-card:nth-child(2)   { transition-delay: .08s; }
+.exp__grid      .exp-card:nth-child(3)   { transition-delay: .16s; }
+.exp__grid      .exp-card:nth-child(4)   { transition-delay: .24s; }
+.exp__grid      .exp-card:nth-child(5)   { transition-delay: .32s; }
+.exp__grid      .exp-card:nth-child(6)   { transition-delay: .40s; }
+.hero__badge    { transition-delay: .1s; }
+.hero__title    { transition-delay: .22s; }
+.hero__subtitle { transition-delay: .34s; }
+.hero__cta      { transition-delay: .46s; }
+.hero__stats    { transition-delay: .58s; }
+
+/* ── Hero Slideshow ───────────────────────────────────────── */
+.hero__slide {
+  position: absolute; inset: 0;
+  opacity: 0;
+  background-size: cover;
+  background-position: center;
+  animation: heroSlide 18s ease-in-out infinite;
+}
+.hero__slide.active        { animation-delay: 0s; }
+.hero__slide:nth-child(2)  { animation-delay: 6s; }
+.hero__slide:nth-child(3)  { animation-delay: 12s; }
+
+/* ── Wave float ───────────────────────────────────────────── */
+.logo__wave { display: inline-block; animation: waveFloat 4s ease-in-out infinite; }
+
+/* ── Hero wave SVG ────────────────────────────────────────── */
+.hero__wave svg { animation: wavePulse 6s ease-in-out infinite; }
+
+/* ── Scroll hint ──────────────────────────────────────────── */
+.scroll-dot { animation: scrollDot 1.8s ease-in-out infinite; }
+
+/* ── Loading wave ─────────────────────────────────────────── */
+.loading-wave { animation: loadingWave 1.2s ease-in-out infinite; }
+
+/* ── Boarding Pass reveal ─────────────────────────────────── */
+.modal--success .boarding-pass {
+  animation: boardingReveal .5s cubic-bezier(.22,.61,.36,1) both;
+}
+
+/* ── Toast ────────────────────────────────────────────────── */
+.toast.show { animation: toastSlide .35s ease both; }
+
+/* ── Mood btn hover pulse ─────────────────────────────────── */
+.mood-btn:hover .mood-btn__icon {
+  animation: waveFloat .6s ease-in-out;
+}

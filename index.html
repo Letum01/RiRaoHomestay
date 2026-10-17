@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rì Rào Homestay – Chữa lành cùng thiên nhiên tại Sơn Hải, Ninh Thuận." />
+  <meta name="keywords" content="Rì Rào Homestay, Sơn Hải, Ninh Thuận, homestay biển, chữa lành, healing" />
+  <meta property="og:title" content="Rì Rào Homestay – Sơn Hải, Ninh Thuận" />
+  <meta property="og:description" content="Chữa lành cùng thiên nhiên – Trải nghiệm bản địa đích thực tại làng chài Sơn Hải." />
+  <meta property="og:type" content="website" />
+  <title>Rì Rào Homestay – Sơn Hải, Ninh Thuận</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1/src/index.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/main.css" />
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="header" id="header" role="banner">
+  <div class="header__inner container">
+    <a href="#hero" class="logo" aria-label="Rì Rào Homestay – Trang chủ">
+      <span class="logo__wave" aria-hidden="true">〜</span>
+      <span class="logo__text">Rì Rào</span>
+      <span class="logo__sub" data-i18n="logoSub">Homestay</span>
+    </a>
+    <nav class="nav" id="mainNav" role="navigation" aria-label="Menu chính">
+      <ul class="nav__list" role="list">
+        <li><a href="#hero"        class="nav__link" data-i18n="navHome">Trang chủ</a></li>
+        <li><a href="#rooms"       class="nav__link" data-i18n="navRooms">Phòng nghỉ</a></li>
+        <li><a href="#experiences" class="nav__link" data-i18n="navExp">Trải nghiệm</a></li>
+        <li><a href="#stay-match"  class="nav__link" data-i18n="navMatch">Stay Match</a></li>
+        <li><a href="#local-guide" class="nav__link" data-i18n="navGuide">Khám phá</a></li>
+        <li><a href="#contact"     class="nav__link" data-i18n="navContact">Liên hệ</a></li>
+      </ul>
+    </nav>
+    <div class="header__actions">
+      <button class="lang-toggle" id="langToggle" aria-label="Chuyển đổi ngôn ngữ">
+        <i class="ph ph-globe" aria-hidden="true"></i>
+        <span id="langLabel">EN</span>
+      </button>
+      <button class="btn btn--primary btn--sm" id="headerBookBtn" data-i18n="bookNow">Đặt phòng ngay</button>
+      <button class="hamburger" id="hamburger" aria-label="Mở menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav-overlay" id="mobileNavOverlay" aria-hidden="true"></div>
+
+<main class="main">
+
+<!-- HERO -->
+<section class="hero" id="hero" aria-label="Trang chủ">
+  <div class="hero__bg">
+    <div class="hero__slide hero__slide--1 active" aria-hidden="true"></div>
+    <div class="hero__slide hero__slide--2" aria-hidden="true"></div>
+    <div class="hero__slide hero__slide--3" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__wave" aria-hidden="true">
+      <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="var(--cream)"/>
+      </svg>
+    </div>
+  </div>
+  <div class="hero__content container">
+    <div class="hero__badge reveal-up">
+      <i class="ph ph-waves" aria-hidden="true"></i>
+      <span data-i18n="heroBadge">Sơn Hải · Ninh Thuận</span>
+    </div>
+    <h1 class="hero__title reveal-up" data-i18n="heroTitle">Chữa lành cùng thiên nhiên –<br/>Trải nghiệm bản địa đích thực</h1>
+    <p class="hero__subtitle reveal-up" data-i18n="heroSubtitle">Nơi sóng biển Sơn Hải thì thầm, gió làng chài ru nhẹ và bạn tìm lại chính mình.</p>
+    <div class="hero__cta reveal-up">
+      <button class="btn btn--primary btn--lg" id="heroBtnBook" data-i18n="heroCTA">Đặt phòng ngay</button>
+      <a href="#rooms" class="btn btn--ghost btn--lg" data-i18n="heroCTA2">Khám phá phòng</a>
+    </div>
+    <div class="hero__stats reveal-up">
+      <div class="hero__stat">
+        <span class="hero__stat-num">3</span>
+        <span class="hero__stat-label" data-i18n="statRooms">Hạng phòng</span>
+      </div>
+      <div class="hero__stat-divider" aria-hidden="true"></div>
+      <div class="hero__stat">
+        <span class="hero__stat-num">5+</span>
+        <span class="hero__stat-label" data-i18n="statExp">Trải nghiệm</span>
+      </div>
+      <div class="hero__stat-divider" aria-hidden="true"></div>
+      <div class="hero__stat">
+        <span class="hero__stat-num">★ 4.9</span>
+        <span class="hero__stat-label" data-i18n="statRate">Đánh giá</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ROOMS -->
+<section class="section rooms" id="rooms" aria-labelledby="roomsTitle">
+  <div class="container">
+    <div class="section__header reveal-up">
+      <span class="section__tag" data-i18n="roomsTag">Phòng nghỉ</span>
+      <h2 class="section__title" id="roomsTitle" data-i18n="roomsTitle">Không gian nghỉ dưỡng</h2>
+      <p class="section__desc" data-i18n="roomsDesc">Mỗi căn phòng hoà quyện với thiên nhiên xanh mát, đón làn gió biển và ánh nắng chan hoà.</p>
+    </div>
+    <div class="rooms__grid">
+      <article class="room-card reveal-up" data-room="standard">
+        <div class="room-card__img-wrap">
+          <div class="room-card__img room-card__img--standard" role="img" aria-label="Phòng Standard"></div>
+          <span class="room-card__badge" data-i18n="roomPopular">Phổ biến</span>
+        </div>
+        <div class="room-card__body">
+          <div class="room-card__top">
+            <h3 class="room-card__name" data-i18n="roomStandardName">Phòng Standard</h3>
+            <div class="room-card__price">
+              <span class="room-card__amount">400K</span>
+              <span class="room-card__unit" data-i18n="perNight">/ đêm</span>
+            </div>
+          </div>
+          <p class="room-card__desc" data-i18n="roomStandardDesc">Không gian ấm cúng, đủ tiện nghi cho cặp đôi hoặc khách solo. View sân vườn, gần biển.</p>
+          <ul class="room-card__amenities">
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenBreakfast">Bữa sáng</span></li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenWifi">Wi-Fi tốc độ cao</span></li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenAC">Máy lạnh</span></li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenHotwater">Nước nóng</span></li>
+          </ul>
+          <button class="btn btn--outline btn--full room-book-btn" data-room="standard" data-price="400000" data-i18n="bookRoom">Đặt phòng này</button>
+        </div>
+      </article>
+      <article class="room-card room-card--featured reveal-up" data-room="large">
+        <div class="room-card__img-wrap">
+          <div class="room-card__img room-card__img--large" role="img" aria-label="Phòng Large"></div>
+          <span class="room-card__badge room-card__badge--hot" data-i18n="roomBest">Yêu thích nhất</span>
+        </div>
+        <div class="room-card__body">
+          <div class="room-card__top">
+            <h3 class="room-card__name" data-i18n="roomLargeName">Phòng Large</h3>
+            <div class="room-card__price">
+              <span class="room-card__amount">500K</span>
+              <span class="room-card__unit" data-i18n="perNight">/ đêm</span>
+            </div>
+          </div>
+          <p class="room-card__desc" data-i18n="roomLargeDesc">Rộng rãi hơn, thích hợp gia đình nhỏ hoặc nhóm bạn. Ban công thoáng đãng.</p>
+          <ul class="room-card__amenities">
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenBreakfast">Bữa sáng</span></li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenWifi">Wi-Fi tốc độ cao</span></li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenAC">Máy lạnh</span></li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenBalcony">Ban công</span></li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenHotwater">Nước nóng</span></li>
+          </ul>
+          <button class="btn btn--primary btn--full room-book-btn" data-room="large" data-price="500000" data-i18n="bookRoom">Đặt phòng này</button>
+        </div>
+      </article>
+      <article class="room-card reveal-up" data-room="double">
+        <div class="room-card__img-wrap">
+          <div class="room-card__img room-card__img--double" role="img" aria-label="Phòng Double"></div>
+          <span class="room-card__badge room-card__badge--premium" data-i18n="roomPremium">Premium</span>
+        </div>
+        <div class="room-card__body">
+          <div class="room-card__top">
+            <h3 class="room-card__name" data-i18n="roomDoubleName">Phòng Double</h3>
+            <div class="room-card__price">
+              <span class="room-card__amount">600K</span>
+              <span class="room-card__unit" data-i18n="perNight">/ đêm</span>
+            </div>
+          </div>
+          <p class="room-card__desc" data-i18n="roomDoubleDesc">Tiêu chuẩn cao nhất, giường đôi lớn, decor thiền định. Lý tưởng cho tuần trăng mật.</p>
+          <ul class="room-card__amenities">
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenBreakfast">Bữa sáng</span></li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenWifi">Wi-Fi tốc độ cao</span></li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenAC">Máy lạnh</span></li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenBalcony">Ban công</span></li>
+            <li><i class="ph ph-check-circle" aria-hidden="true"></i><span data-i18n="amenBathtub">Bồn tắm</span></li>
+          </ul>
+          <button class="btn btn--outline btn--full room-book-btn" data-room="double" data-price="600000" data-i18n="bookRoom">Đặt phòng này</button>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCES -->
+<section class="section experiences" id="experiences" aria-labelledby="expTitle">
+  <div class="container">
+    <div class="section__header reveal-up">
+      <span class="section__tag" data-i18n="expTag">Trải nghiệm</span>
+      <h2 class="section__title" id="expTitle" data-i18n="expTitle">Bản địa đích thực</h2>
+      <p class="section__desc" data-i18n="expDesc">Hòa mình vào cuộc sống làng chài Sơn Hải, khám phá thiên nhiên hoang sơ và những khoảnh khắc đáng nhớ.</p>
+    </div>
+    <div class="exp__grid">
+      <article class="exp-card reveal-up">
+        <div class="exp-card__icon-wrap"><span class="exp-card__icon">🏄</span></div>
+        <div class="exp-card__body">
+          <h3 class="exp-card__name" data-i18n="expSUPName">Chèo SUP</h3>
+          <p class="exp-card__desc" data-i18n="expSUPDesc">Trượt trên mặt biển Sơn Hải trong vắt vào buổi sáng sớm. Huấn luyện viên bản địa hỗ trợ người mới.</p>
+          <span class="exp-card__tag" data-i18n="expAdventure">Phiêu lưu</span>
+        </div>
+      </article>
+      <article class="exp-card reveal-up">
+        <div class="exp-card__icon-wrap"><span class="exp-card__icon">🎣</span></div>
+        <div class="exp-card__body">
+          <h3 class="exp-card__name" data-i18n="expFishingName">Tour làng chài</h3>
+          <p class="exp-card__desc" data-i18n="expFishingDesc">Theo chân ngư dân ra khơi từ 4 giờ sáng, trải nghiệm cuộc sống đánh cá truyền thống độc đáo.</p>
+          <span class="exp-card__tag" data-i18n="expCulture">Văn hoá</span>
+        </div>
+      </article>
+      <article class="exp-card reveal-up">
+        <div class="exp-card__icon-wrap"><span class="exp-card__icon">🤿</span></div>
+        <div class="exp-card__body">
+          <h3 class="exp-card__name" data-i18n="expDiveName">Lặn ngắm san hô</h3>
+          <p class="exp-card__desc" data-i18n="expDiveDesc">Khám phá rạn san hô đa sắc màu dưới làn nước biển Ninh Thuận xanh ngăn ngắt.</p>
+          <span class="exp-card__tag" data-i18n="expNature">Thiên nhiên</span>
+        </div>
+      </article>
+      <article class="exp-card reveal-up">
+        <div class="exp-card__icon-wrap"><span class="exp-card__icon">🚙</span></div>
+        <div class="exp-card__body">
+          <h3 class="exp-card__name" data-i18n="expJeepName">Tour xe Jeep đồi cát</h3>
+          <p class="exp-card__desc" data-i18n="expJeepDesc">Phi xe Jeep băng qua đồi cát Nam Cương hùng vĩ – trải nghiệm cực kỳ thú vị và ngoạn mục.</p>
+          <span class="exp-card__tag" data-i18n="expAdventure">Phiêu lưu</span>
+        </div>
+      </article>
+      <article class="exp-card exp-card--free reveal-up">
+        <div class="exp-card__icon-wrap"><span class="exp-card__icon">🌅</span></div>
+        <div class="exp-card__body">
+          <h3 class="exp-card__name" data-i18n="expSunName">Ngắm bình minh &amp; hoàng hôn</h3>
+          <p class="exp-card__desc" data-i18n="expSunDesc">Những khoảnh khắc vàng trên bãi biển Sơn Hải – hoàn toàn miễn phí dành cho mọi khách lưu trú.</p>
+          <span class="exp-card__tag exp-card__tag--free" data-i18n="expFree">Miễn phí</span>
+        </div>
+      </article>
+      <article class="exp-card exp-card--free reveal-up">
+        <div class="exp-card__icon-wrap"><span class="exp-card__icon">🧘</span></div>
+        <div class="exp-card__body">
+          <h3 class="exp-card__name" data-i18n="expYogaName">Yoga bãi biển buổi sáng</h3>
+          <p class="exp-card__desc" data-i18n="expYogaDesc">Khởi đầu ngày mới với thiền định và yoga trên bãi cát, đón bình minh biển. Dịu nhẹ và phục hồi.</p>
+          <span class="exp-card__tag exp-card__tag--free" data-i18n="expFree">Miễn phí</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- STAY MATCH -->
+<section class="section stay-match" id="stay-match" aria-labelledby="matchTitle">
+  <div class="container">
+    <div class="section__header reveal-up">
+      <span class="section__tag" data-i18n="matchTag">Stay Match</span>
+      <h2 class="section__title" id="matchTitle" data-i18n="matchTitle">Tìm hành trình của bạn</h2>
+      <p class="section__desc" data-i18n="matchDesc">Chọn tâm trạng – nhận ngay gợi ý phòng và lịch trình được cá nhân hoá riêng cho bạn.</p>
+    </div>
+    <div class="mood-selector reveal-up" role="group" aria-label="Chọn tâm trạng">
+      <button class="mood-btn active" data-mood="healing" aria-pressed="true">
+        <span class="mood-btn__icon" aria-hidden="true">🌊</span>
+        <span class="mood-btn__label" data-i18n="moodHealing">Healing</span>
+        <span class="mood-btn__sub" data-i18n="moodHealingSub">Chữa lành &amp; thư giãn</span>
+      </button>
+      <button class="mood-btn" data-mood="bonding" aria-pressed="false">
+        <span class="mood-btn__icon" aria-hidden="true">🤝</span>
+        <span class="mood-btn__label" data-i18n="moodBonding">Bonding</span>
+        <span class="mood-btn__sub" data-i18n="moodBondingSub">Gắn kết gia đình &amp; bạn bè</span>
+      </button>
+      <button class="mood-btn" data-mood="workation" aria-pressed="false">
+        <span class="mood-btn__icon" aria-hidden="true">💻</span>
+        <span class="mood-btn__label" data-i18n="moodWorkation">Workation</span>
+        <span class="mood-btn__sub" data-i18n="moodWorkationSub">Làm việc + nghỉ dưỡng</span>
+      </button>
+    </div>
+    <div class="match-result reveal-up" id="matchResult" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- LOCAL GUIDE & FAQ -->
+<section class="section local-guide" id="local-guide" aria-labelledby="guideTitle">
+  <div class="container">
+    <div class="section__header reveal-up">
+      <span class="section__tag" data-i18n="guideTag">Khám phá</span>
+      <h2 class="section__title" id="guideTitle" data-i18n="guideTitle">Làng chài Sơn Hải</h2>
+      <p class="section__desc" data-i18n="guideDesc">Một trong những làng chài đẹp và hoang sơ nhất miền Trung – nơi cuộc sống ngư dân chưa bị xáo trộn bởi du lịch đại trà.</p>
+    </div>
+    <div class="guide__layout">
+      <div class="guide__map-wrap reveal-up">
+        <div class="guide__map" role="img" aria-label="Bản đồ vị trí Rì Rào Homestay">
+          <div class="guide__map-inner">
+            <div class="map-pin"><i class="ph ph-map-pin-simple-area"></i><span>Rì Rào Homestay</span></div>
+            <div class="map-info">
+              <p>📍 <strong data-i18n="mapLocation">Sơn Hải, Thuận Nam, Ninh Thuận</strong></p>
+              <p>🚗 <span data-i18n="mapPhanRang">Cách TP Phan Rang ~40 phút</span></p>
+              <p>✈️ <span data-i18n="mapAirport">Cách sân bay Cam Ranh ~80 phút</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="guide__facts">
+          <div class="guide__fact reveal-up"><i class="ph ph-sun"></i><div><strong data-i18n="factWeatherTitle">Khí hậu</strong><p data-i18n="factWeatherDesc">Nắng đẹp quanh năm. Mùa đẹp nhất: tháng 1–8.</p></div></div>
+          <div class="guide__fact reveal-up"><i class="ph ph-fish"></i><div><strong data-i18n="factSeafoodTitle">Hải sản</strong><p data-i18n="factSeafoodDesc">Tôm hùm, cá ngừ đại dương tươi ngon trực tiếp từ ngư dân.</p></div></div>
+          <div class="guide__fact reveal-up"><i class="ph ph-tree"></i><div><strong data-i18n="factNatureTitle">Thiên nhiên</strong><p data-i18n="factNatureDesc">Đồi cát, vườn nho, rừng táo, biển xanh – trong bán kính 30km.</p></div></div>
+        </div>
+      </div>
+      <div class="faq reveal-up">
+        <h3 class="faq__title" data-i18n="faqTitle">Câu hỏi thường gặp</h3>
+        <div class="faq__list">
+          <details class="faq__item"><summary class="faq__q" data-i18n="faqQ1">Phương thức thanh toán?</summary><p class="faq__a" data-i18n="faqA1">Chấp nhận chuyển khoản ngân hàng và tiền mặt. Đặt cọc 30% qua chuyển khoản để giữ phòng.</p></details>
+          <details class="faq__item"><summary class="faq__q" data-i18n="faqQ2">Chính sách đặt cọc?</summary><p class="faq__a" data-i18n="faqA2">Đặt cọc 30% tổng giá phòng trong vòng 24 giờ sau khi đặt. Số tiền còn lại thanh toán khi nhận phòng.</p></details>
+          <details class="faq__item"><summary class="faq__q" data-i18n="faqQ3">Chính sách hủy/đổi lịch?</summary><p class="faq__a" data-i18n="faqA3">Miễn phí hủy trước 48 giờ, hoàn 100% tiền cọc. Hủy trong vòng 48 giờ mất 50% tiền cọc. Không hoàn nếu hủy trong ngày.</p></details>
+          <details class="faq__item"><summary class="faq__q" data-i18n="faqQ4">Giờ nhận / trả phòng?</summary><p class="faq__a" data-i18n="faqA4">Check-in từ 14:00. Check-out trước 12:00. Early/late theo thỏa thuận.</p></details>
+          <details class="faq__item"><summary class="faq__q" data-i18n="faqQ5">Có đón tại sân bay không?</summary><p class="faq__a" data-i18n="faqA5">Có dịch vụ đưa đón sân bay Cam Ranh và ga Tháp Chàm. Phí thêm, liên hệ để báo giá.</p></details>
+          <details class="faq__item"><summary class="faq__q" data-i18n="faqQ6">Wi-Fi và dịch vụ ăn uống?</summary><p class="faq__a" data-i18n="faqA6">Wi-Fi miễn phí toàn khu. Bữa sáng bao gồm trong giá phòng. Bữa trưa/tối đặt thêm tại homestay.</p></details>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section contact" id="contact" aria-labelledby="contactTitle">
+  <div class="container">
+    <div class="section__header reveal-up">
+      <span class="section__tag" data-i18n="contactTag">Liên hệ</span>
+      <h2 class="section__title" id="contactTitle" data-i18n="contactTitle">Kết nối với chúng tôi</h2>
+    </div>
+    <div class="contact__grid">
+      <div class="contact__info reveal-up">
+        <div class="contact__item">
+          <i class="ph ph-map-pin" aria-hidden="true"></i>
+          <div><strong data-i18n="contactAddress">Địa chỉ</strong><p>Thôn Sơn Hải, xã Phước Dinh, huyện Thuận Nam, Ninh Thuận</p></div>
+        </div>
+        <div class="contact__item">
+          <i class="ph ph-phone" aria-hidden="true"></i>
+          <div><strong data-i18n="contactPhone">Điện thoại / Zalo</strong><a href="tel:+84xxxxxxxxx" class="contact__link">+84 xxx xxx xxxx</a></div>
+        </div>
+        <div class="contact__item">
+          <i class="ph ph-envelope" aria-hidden="true"></i>
+          <div><strong>Email</strong><a href="mailto:hello@riraohomestay.com" class="contact__link">hello@riraohomestay.com</a></div>
+        </div>
+        <div class="contact__socials">
+          <a href="https://facebook.com/RiRaoHomestay" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+          <a href="https://instagram.com/RiRaoHomestay" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+          <a href="https://tiktok.com/@RiRaoHomestay" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="ph ph-tiktok-logo"></i></a>
+        </div>
+        <div class="contact__hashtags">
+          <span class="hashtag">#RiRaoHomestay</span>
+          <span class="hashtag">#RiRaoHealing</span>
+          <span class="hashtag">#SonHaiNinhThuan</span>
+        </div>
+      </div>
+      <div class="contact__cta reveal-up">
+        <div class="contact__cta-card">
+          <span class="contact__cta-icon" aria-hidden="true">🌊</span>
+          <h3 data-i18n="ctaTitle">Sẵn sàng chữa lành?</h3>
+          <p data-i18n="ctaDesc">Đặt phòng ngay hôm nay và nhận ưu đãi sớm. Số lượng phòng có hạn!</p>
+          <button class="btn btn--primary btn--lg" id="contactBookBtn" data-i18n="bookNow">Đặt phòng ngay</button>
+          <p class="contact__cta-note" data-i18n="ctaNote">Hoặc nhắn tin trực tiếp qua Zalo / Messenger</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<!-- FOOTER -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer__inner">
+      <div class="footer__brand">
+        <a href="#hero" class="logo logo--light" aria-label="Rì Rào Homestay">
+          <span class="logo__wave" aria-hidden="true">〜</span>
+          <span class="logo__text">Rì Rào</span>
+          <span class="logo__sub">Homestay</span>
+        </a>
+        <p class="footer__tagline" data-i18n="footerTagline">Sóng biển rì rào – Tâm hồn bình yên.</p>
+      </div>
+      <nav class="footer__nav" aria-label="Footer navigation">
+        <a href="#rooms"       data-i18n="navRooms">Phòng nghỉ</a>
+        <a href="#experiences" data-i18n="navExp">Trải nghiệm</a>
+        <a href="#stay-match"  data-i18n="navMatch">Stay Match</a>
+        <a href="#local-guide" data-i18n="navGuide">Khám phá</a>
+        <a href="#contact"     data-i18n="navContact">Liên hệ</a>
+      </nav>
+      <p class="footer__copy">© 2025 Rì Rào Homestay · Sơn Hải, Ninh Thuận</p>
+    </div>
+  </div>
+</footer>
+
+<!-- MOBILE STICKY BOTTOM NAV -->
+<nav class="mobile-bottom-nav" id="mobileBottomNav" role="navigation" aria-label="Mobile bottom navigation">
+  <a href="#hero"        class="mobile-nav-item active" aria-label="Trang chủ"><i class="ph ph-house"></i><span data-i18n="navHome">Trang chủ</span></a>
+  <a href="#rooms"       class="mobile-nav-item"        aria-label="Phòng nghỉ"><i class="ph ph-bed"></i><span data-i18n="navRooms">Phòng</span></a>
+  <button               class="mobile-nav-item mobile-nav-item--book" id="mobileBookBtn" aria-label="Đặt phòng"><i class="ph ph-calendar-check"></i><span data-i18n="bookNow">Đặt phòng</span></button>
+  <a href="#experiences" class="mobile-nav-item"        aria-label="Trải nghiệm"><i class="ph ph-compass"></i><span data-i18n="navExp">Trải nghiệm</span></a>
+</nav>
+
+<!-- BOOKING MODAL -->
+<div class="modal-overlay" id="bookingModalOverlay" role="dialog" aria-modal="true" aria-labelledby="bookingModalTitle" aria-hidden="true">
+  <div class="modal" id="bookingModal">
+    <button class="modal__close" id="modalClose" aria-label="Đóng form đặt phòng"><i class="ph ph-x"></i></button>
+    <div class="modal__header">
+      <span class="modal__icon" aria-hidden="true">🌊</span>
+      <h2 class="modal__title" id="bookingModalTitle" data-i18n="bookingTitle">Đặt phòng tại Rì Rào</h2>
+      <p class="modal__subtitle" data-i18n="bookingSubtitle">Điền thông tin bên dưới – chúng tôi xác nhận qua Email &amp; Zalo.</p>
+    </div>
+    <div class="booking-steps" role="list">
+      <div class="booking-step active" data-step="1" role="listitem"><span class="booking-step__num">1</span><span data-i18n="stepDates">Ngày &amp; Phòng</span></div>
+      <div class="booking-step__line"></div>
+      <div class="booking-step" data-step="2" role="listitem"><span class="booking-step__num">2</span><span data-i18n="stepInfo">Thông tin</span></div>
+      <div class="booking-step__line"></div>
+      <div class="booking-step" data-step="3" role="listitem"><span class="booking-step__num">3</span><span data-i18n="stepConfirm">Xác nhận</span></div>
+    </div>
+    <form id="bookingForm" novalidate>
+      <div class="form-step" id="step1">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="checkIn" data-i18n="labelCheckIn">Ngày nhận phòng *</label>
+            <div class="input-wrap input-wrap--icon"><i class="ph ph-calendar"></i><input type="date" id="checkIn" name="check_in" class="form-input" required /></div>
+            <span class="form-error" id="checkInError" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="checkOut" data-i18n="labelCheckOut">Ngày trả phòng *</label>
+            <div class="input-wrap input-wrap--icon"><i class="ph ph-calendar-blank"></i><input type="date" id="checkOut" name="check_out" class="form-input" required /></div>
+            <span class="form-error" id="checkOutError" role="alert"></span>
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="guests" data-i18n="labelGuests">Số khách *</label>
+            <div class="input-wrap input-wrap--icon"><i class="ph ph-users"></i>
+              <select id="guests" name="guests" class="form-input" required>
+                <option value="" data-i18n="selectGuests">-- Chọn số khách --</option>
+                <option value="1">1</option><option value="2">2</option>
+                <option value="3">3</option><option value="4">4</option><option value="5+">5+</option>
+              </select>
+            </div>
+            <span class="form-error" id="guestsError" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="roomType" data-i18n="labelRoom">Hạng phòng *</label>
+            <div class="input-wrap input-wrap--icon"><i class="ph ph-bed"></i>
+              <select id="roomType" name="room_type" class="form-input" required>
+                <option value="" data-i18n="selectRoom">-- Chọn phòng --</option>
+                <option value="standard" data-price="400000" data-i18n="roomStandardOpt">Standard – 400K/đêm</option>
+                <option value="large"    data-price="500000" data-i18n="roomLargeOpt">Large – 500K/đêm</option>
+                <option value="double"   data-price="600000" data-i18n="roomDoubleOpt">Double – 600K/đêm</option>
+              </select>
+            </div>
+            <span class="form-error" id="roomTypeError" role="alert"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" data-i18n="labelAddons">Trải nghiệm đi kèm</label>
+          <div class="addons-grid">
+            <label class="addon-check"><input type="checkbox" name="addon_sup"     value="sup"         class="addon-input"/><span class="addon-label" data-i18n="addonSUP">🏄 Chèo SUP</span></label>
+            <label class="addon-check"><input type="checkbox" name="addon_fishing" value="fishing"    class="addon-input"/><span class="addon-label" data-i18n="addonFishing">🎣 Tour làng chài</span></label>
+            <label class="addon-check"><input type="checkbox" name="addon_dive"    value="dive"        class="addon-input"/><span class="addon-label" data-i18n="addonDive">🤿 Lặn san hô</span></label>
+            <label class="addon-check"><input type="checkbox" name="addon_jeep"    value="jeep" class="addon-input"/><span class="addon-label" data-i18n="addonJeep">🚙 Tour Jeep đồi cát</span></label>
+          </div>
+        </div>
+        <div class="price-summary" id="priceSummary" aria-live="polite">
+          <div class="price-summary__row"><span data-i18n="priceRoom">Tiền phòng</span><span id="priceRoom">–</span></div>
+          <div class="price-summary__row"><span data-i18n="priceNights">Số đêm</span><span id="priceNights">–</span></div>
+          <div class="price-summary__row price-summary__row--total"><strong data-i18n="priceTotal">Tổng dự kiến</strong><strong id="priceTotal" class="price-summary__total">–</strong></div>
+          <div class="price-summary__row price-summary__row--deposit"><span data-i18n="priceDeposit">Cọc 30%</span><span id="priceDeposit">–</span></div>
+        </div>
+        <div class="form-nav">
+          <button type="button" class="btn btn--primary step-next" id="nextStep" data-next="2" data-i18n="btnNext">Tiếp theo →</button>
+        </div>
+      </div>
+      <!-- STEP 2 -->
+      <div class="form-step hidden" id="step2">
+        <div class="form-group">
+          <label class="form-label" for="guestName" data-i18n="labelName">Họ và tên *</label>
+          <div class="input-wrap input-wrap--icon"><i class="ph ph-user"></i><input type="text" id="guestName" name="to_name" class="form-input" required autocomplete="name" /></div>
+          <span class="form-error" id="guestNameError" role="alert"></span>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="guestPhone" data-i18n="labelPhone">Số điện thoại *</label>
+            <div class="input-wrap input-wrap--icon"><i class="ph ph-phone"></i><input type="tel" id="guestPhone" name="guest_phone" class="form-input" required autocomplete="tel" /></div>
+            <span class="form-error" id="guestPhoneError" role="alert"></span>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="guestEmail" data-i18n="labelEmail">Email *</label>
+            <div class="input-wrap input-wrap--icon"><i class="ph ph-envelope"></i><input type="email" id="guestEmail" name="guest_email" class="form-input" required autocomplete="email" /></div>
+            <span class="form-error" id="guestEmailError" role="alert"></span>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="specialRequests" data-i18n="labelNotes">Ghi chú đặc biệt</label>
+          <textarea id="specialRequests" name="special_requests" class="form-input form-textarea" rows="3"></textarea>
+        </div>
+        <div class="form-nav">
+          <button type="button" class="btn btn--ghost-dark step-back" id="prevStep" data-back="1" data-i18n="btnBack">← Quay lại</button>
+          <button type="button" class="btn btn--primary step-next"  data-next="3" data-i18n="btnNext">Tiếp theo →</button>
+        </div>
+      </div>
+      <!-- STEP 3 -->
+      <div class="form-step hidden" id="step3">
+        <div class="review-card" id="reviewCard"></div>
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" id="agreeTerms" required />
+            <span data-i18n="agreeTerms">Tôi đồng ý với chính sách đặt phòng và hủy phòng của Rì Rào Homestay.</span>
+          </label>
+          <span class="form-error" id="agreeError" role="alert"></span>
+        </div>
+        <div class="form-nav">
+          <button type="button" class="btn btn--ghost-dark step-back" data-back="2" data-i18n="btnBack">← Quay lại</button>
+          <button type="submit" class="btn btn--primary btn--submit" id="submitBooking">
+            <span class="btn__text" data-i18n="btnSubmit">Xác nhận đặt phòng</span>
+            <span class="btn__loading" aria-hidden="true"><span class="loading-wave">〜〜〜</span></span>
+          </button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- SUCCESS MODAL – Digital Boarding Pass -->
+<div class="modal-overlay" id="successModalOverlay" role="dialog" aria-modal="true" aria-labelledby="successTitle" aria-hidden="true">
+  <div class="modal modal--success" id="successModal">
+    <div class="boarding-pass" id="boardingPass">
+      <div class="boarding-pass__header">
+        <div class="boarding-pass__logo"><span class="logo__wave">〜</span><span>Rì Rào Homestay</span></div>
+        <div class="boarding-pass__badge" data-i18n="passConfirmed">✓ ĐÃ XÁC NHẬN</div>
+      </div>
+      <h2 class="boarding-pass__title" id="successTitle" data-i18n="passTitle">Digital Boarding Pass</h2>
+      <p class="boarding-pass__subtitle" data-i18n="passSubtitle">Hành trình chữa lành của bạn đã được đặt!</p>
+      <div class="boarding-pass__details" id="passDetails"></div>
+      <div class="boarding-pass__divider" aria-hidden="true">
+        <div class="divider-circles"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      </div>
+      <div class="boarding-pass__footer">
+        <p data-i18n="passEmailNote">Email xác nhận đã được gửi đến hộp thư của bạn.</p>
+        <div class="boarding-pass__social">
+          <span data-i18n="passShare">Chia sẻ hành trình:</span>
+          <span class="hashtag">#RiRaoHomestay</span>
+          <span class="hashtag">#RiRaoHealing</span>
+        </div>
+      </div>
+      <button class="btn btn--primary btn--full" id="closeSuccess" data-i18n="passClose">Hoàn tất – Hẹn gặp tại Sơn Hải! 🌊</button>
+    </div>
+  </div>
+</div>
+
+<!-- ERROR TOAST -->
+<div class="toast" id="toast" role="alert" aria-live="assertive" aria-hidden="true">
+  <i class="ph ph-warning-circle" aria-hidden="true"></i>
+  <span id="toastMessage"></span>
+</div>
+
+<!-- Scripts -->
+<script src="js/i18n.js"></script>
+<script src="js/stay-match.js"></script>
+<script src="js/booking.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
+
+
+
+
+
