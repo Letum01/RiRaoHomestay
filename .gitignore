@@ -1,0 +1,14 @@
+# Dependencies / tooling
+node_modules/
+
+# Vercel
+.vercel/
+
+# Logs & OS
+*.log
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
