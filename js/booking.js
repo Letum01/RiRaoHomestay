@@ -9,6 +9,10 @@ const EMAILJS_SERVICE_ID = 'Rì_Rào_Homestay';
 const EMAILJS_TEMPLATE_OWNER = 'template_buz14jo';
 const EMAILJS_TEMPLATE_CUSTOMER = 'template_8t8b1ho';
 
+// Email nhận đơn đặt phòng của CHỦ homestay (template owner – "Có đơn đặt phòng mới")
+// Template khách dùng guest_email (email khách nhập ở form)
+const OWNER_EMAIL = 'thuyntt223@uef.edu.vn';
+
 // Room prices (VND)
 const ROOM_PRICES = {
   standard: 400000,
@@ -482,10 +486,15 @@ async function submitBooking(e) {
   }
 
   try {
+    // Tách payload cho2 template – fix lỗi EmailJS 422 "The recipients address is empty":
+    // template CHỦ (đơn mới) → OWNER_EMAIL; template KHÁCH (xác nhận) → email khách nhập form
+    const ownerPayload    = { ...formData, to_email: OWNER_EMAIL,          reply_to: formData.guest_email };
+    const customerPayload = { ...formData, to_email: formData.guest_email, reply_to: formData.guest_email };
+
     // Send both emails in parallel
     const [ownerResponse, customerResponse] = await Promise.all([
-      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_OWNER, formData),
-      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CUSTOMER, formData)
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_OWNER, ownerPayload),
+      emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_CUSTOMER, customerPayload)
     ]);
 
     // Hide booking modal, show success
